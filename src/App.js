@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainPage from "./components/MainPage";
 import Navbar from "./components/Navbar";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom'
 import LogInForm from "./components/LogInForm";
 import RegisterForm from "./components/RegisterForm";
 import Tareas from "./components/Tareas";
@@ -24,35 +24,34 @@ function App() {
   
   return firebaseUser !== undefined ? (
    
-     <Router>     
+     <HashRouter>     
        <Navbar/>
-
        <Switch>
-         <Route path="/tareas">
+         <Route exact path="/tareas">
             <Tareas firebaseUser={firebaseUser}></Tareas>
          </Route>
        </Switch>
 
        <Switch>
-         <Route path="/register">
+         <Route  exact path="/register">
             <RegisterForm/>
          </Route>
        </Switch>
         
         <Switch>
-          <Route path="/login" exact>
+          <Route exact path="/login" >
             <LogInForm/>
           </Route>
         </Switch>
 
        <Switch>
-          <Route path="/" exact>
+          <Route exact path="/" >
             <MainPage/>
           </Route>
         </Switch>
      
 
-     </Router>
+     </HashRouter>
   ):(
     <div className="d-flex justify-content-center">
   <div className="spinner-border" role="status">
