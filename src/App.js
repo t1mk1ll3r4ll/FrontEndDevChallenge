@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainPage from "./components/MainPage";
 import Navbar from "./components/Navbar";
-import {BrowserRouter as Router, Switch, Route, HashRouter} from 'react-router-dom'
+import {Switch, Route, HashRouter} from 'react-router-dom'
 import LogInForm from "./components/LogInForm";
 import RegisterForm from "./components/RegisterForm";
 import Tareas from "./components/Tareas";
