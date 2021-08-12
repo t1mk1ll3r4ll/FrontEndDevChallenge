@@ -337,7 +337,7 @@ const ListaTareas = (props) => {
 
             {
                 anadir && (
-                    <div className="card mx-auto p-2 w-25" >
+                    <div className="card mx-auto p-2 w-50" >
                         {
                             error && <div className="mt-5 alert alert-danger"> {error} </div>
                         }
@@ -355,7 +355,7 @@ const ListaTareas = (props) => {
 
                             <label className="form-label mt-2 p-2">Descripcion de la tarea</label>
                             <input 
-                            className="form-control" 
+                            className="form-control p-2" 
                             type="text"  
                             value={descripcion}
                             placeholder="descripcion"
@@ -364,7 +364,7 @@ const ListaTareas = (props) => {
                     
                             <label className="form-label mt-2 p-2">fecha de inicio</label>
                             <input 
-                            className="form-control" 
+                            className="form-control p-2" 
                             type="datetime-local" 
                             value={inicio}
                             placeholder="hora de inicio"
@@ -375,10 +375,10 @@ const ListaTareas = (props) => {
                             <input className="form-control" value={final} type="datetime-local" placeholder="hora de finalizacion" onChange={e=>{setFinal(e.target.value)}} />
                         </div>
 
-                    <div className=" card-item   mx-auto mb-5"> 
-                    <label className="form-label mt-2 p-2">Estado</label>
+                    <div className=" card-item   mx-auto mt-2 p-2"> 
+                    <label className="form-label ">Estado</label>
 
-                        <select className="form-select" onChange={e=>{ setEstado(e.target.value)}} > 
+                        <select className="form-select mb-2" onChange={e=>{ setEstado(e.target.value)}} > 
                             <option defaultValue> seleccione un estado para la tarea</option>
                             <option value="Pendiente"> Pendiente</option>
                             <option value="En Proceso">En proceso </option>
