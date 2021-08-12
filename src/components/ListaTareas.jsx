@@ -238,14 +238,7 @@ const ListaTareas = (props) => {
 
     return (
         <div>
-
-              
-
-
-
-
-            <button type="button" className={anadir? "btn btn-outline-danger mb-5 mt-5" : "btn btn-outline-success mb-5 mt-5"} onClick={()=>{setAnadir(!anadir)}}>
-            
+            <button type="button" className={anadir? "btn btn-outline-danger mb-5 mt-5" : "btn btn-outline-success mb-5 mt-5"} onClick={()=>{setAnadir(!anadir)}}>  
             {
                 anadir ? (
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash-circle-fill mx-2" viewBox="0 0 16 16">
@@ -456,11 +449,17 @@ const ListaTareas = (props) => {
                     }
                     </ul>
                 ) : (
-                    <div className="d-flex justify-items-center">
+                    <div className="d-flex jsutify-content-center">
                         <div className="container text-center" width="100%">
                             <h1 className="display-6 text-center" > hola!</h1>
                             <p> no cuentas con tareas, para agregar una, da click en el boton de arriba</p>
+                            <div className="d-flex justify-content-center">
+                                <img className="text-start" src="https://lh3.googleusercontent.com/WhoRlW5zitqIkyCee8ISIROLCsXDRjZeKQj0vKUUFaMMwH0uPTamme2QGJIFuvNG9hUhrZdeOnsB1g1mUQTbEc43lofm0LUbAJILDkDNgR7w_XDYpmczcW5Gb7v_vd1_q8-68-CbyfQ=w2400"  alt="separador"/>
+                            </div>
+                            
                         </div>
+                        
+                        
                     </div>
                     )
             }
