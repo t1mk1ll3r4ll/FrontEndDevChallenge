@@ -410,7 +410,7 @@ const ListaTareas = (props) => {
                             <li className="list-group-item"key={item.id}>
                                 <div className="list-group-item w-100 d-flex justify-content-between">
                                         <h5 className="mb-1 text-primary">{item.nombre}</h5>  
-                                        <small className="">tarea creada {moment(item.inicio).fromNow()}</small>
+                                        <small className=""> {moment(item.inicio).fromNow()}</small>
                                     </div>
                                     
                                     <div className=" d-flex justify-content-start">
