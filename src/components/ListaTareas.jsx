@@ -199,7 +199,7 @@ const ListaTareas = (props) => {
             auth.onAuthStateChanged(user =>{
                 if(user){
                     setUser(true)
-                   // obtenerDatos()
+                    obtenerDatos()
 
                 }
                 else{
