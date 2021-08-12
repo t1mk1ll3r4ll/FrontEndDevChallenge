@@ -364,6 +364,7 @@ const ListaTareas = (props) => {
                     
                             <label className="form-label mt-2 p-2">fecha de inicio</label>
                             <input 
+                           
                             className="form-control p-2" 
                             type="datetime-local" 
                             value={inicio}
@@ -382,7 +383,8 @@ const ListaTareas = (props) => {
                             <option defaultValue> seleccione un estado para la tarea</option>
                             <option value="Pendiente"> Pendiente</option>
                             <option value="En Proceso">En proceso </option>
-                            <option value="Realizada"> Realizada</option>
+                           {/* opcion realizada se desabilita por la comprobacion de las fechas  */}
+                            <option value="Realizada" disabled> Realizada</option>
                         </select>
                     </div>
 
