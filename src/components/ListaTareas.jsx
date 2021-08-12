@@ -199,7 +199,7 @@ const ListaTareas = (props) => {
             auth.onAuthStateChanged(user =>{
                 if(user){
                     setUser(true)
-                    obtenerDatos()
+                   // obtenerDatos()
 
                 }
                 else{
@@ -337,11 +337,12 @@ const ListaTareas = (props) => {
 
             {
                 anadir && (
-                    <div className="card" >
+                    <div className="card mx-auto p-2 w-25" >
                         {
                             error && <div className="mt-5 alert alert-danger"> {error} </div>
                         }
-                        <div className="card-item  mt-3 mr-5 ml-5">
+
+                        <div className="card-item mx-auto mt-2 p-2">
                             <label className="form-label">Nombre de la tarea</label>
                             
                             <input
@@ -352,31 +353,30 @@ const ListaTareas = (props) => {
                             onChange={e=>{setNombre(e.target.value)}}
                             ></input>
 
-                            <label className="form-label">Descripcion de la tarea</label>
+                            <label className="form-label mt-2 p-2">Descripcion de la tarea</label>
                             <input 
                             className="form-control" 
                             type="text"  
                             value={descripcion}
                             placeholder="descripcion"
                             onChange={e=>{setDescripcion(e.target.value)}}
-                            
                             />
-                    </div>
-                    <div className=" card-item  mt-3 mr-3 ">
-                    <label className="form-label">fecha de inicio</label>
-                        <input 
-                        className="form-control" 
-                        type="datetime-local" 
-                        value={inicio}
-                        placeholder="hora de inicio"
-                        onChange={e=>{setInicio(e.target.value)}}
-                        />
-                        <label className="form-label">fecha de finalizacion</label>
+                    
+                            <label className="form-label mt-2 p-2">fecha de inicio</label>
+                            <input 
+                            className="form-control" 
+                            type="datetime-local" 
+                            value={inicio}
+                            placeholder="hora de inicio"
+                            onChange={e=>{setInicio(e.target.value)}}
+                            />
+                            <label className="form-label">fecha de finalizacion</label>
 
-                        <input className="form-control" value={final} type="datetime-local" placeholder="hora de finalizacion" onChange={e=>{setFinal(e.target.value)}} />
-                    </div>
-                    <div className=" card-item  mt-3 mr-3 ml-3 mb-3"> 
-                    <label className="form-label">Estado</label>
+                            <input className="form-control" value={final} type="datetime-local" placeholder="hora de finalizacion" onChange={e=>{setFinal(e.target.value)}} />
+                        </div>
+
+                    <div className=" card-item   mx-auto mb-5"> 
+                    <label className="form-label mt-2 p-2">Estado</label>
 
                         <select className="form-select" onChange={e=>{ setEstado(e.target.value)}} > 
                             <option defaultValue> seleccione un estado para la tarea</option>
@@ -385,6 +385,7 @@ const ListaTareas = (props) => {
                             <option value="Realizada"> Realizada</option>
                         </select>
                     </div>
+
                     <button onClick={()=>{subirTarea()}} type="button" className="btn btn-success mb-3 mx-auto ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle mx-2" viewBox="0 0 16 16">
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -407,9 +408,11 @@ const ListaTareas = (props) => {
                     {
                         tareas.map(item => (
                             <li className="list-group-item"key={item.id}>
-                                <div className="list-group-item w-100 d-flex justify-content-start">
-                                        <h5 className="mb-1">{item.nombre}</h5>  
+                                <div className="list-group-item w-100 d-flex justify-content-between">
+                                        <h5 className="mb-1 text-primary">{item.nombre}</h5>  
+                                        <small className="">tarea creada {moment(item.inicio).fromNow()}</small>
                                     </div>
+                                    
                                     <div className=" d-flex justify-content-start">
                                         <p className="mb-1 mx-2 " >{item.descripcion}</p>
                                     </div>
