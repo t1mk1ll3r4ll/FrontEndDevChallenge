@@ -6,7 +6,6 @@ import LogInForm from "./components/LogInForm";
 import RegisterForm from "./components/RegisterForm";
 import Tareas from "./components/Tareas";
 import { auth } from "./firebase";
-import FooterTareas from "./components/FooterTareas";
 
 function App() {
 
@@ -29,7 +28,6 @@ function App() {
        <Switch>
          <Route exact path="/tareas">
             <Tareas firebaseUser={firebaseUser}></Tareas>
-            <FooterTareas firebaseUser={firebaseUser}/>
          </Route>
        </Switch>
 
